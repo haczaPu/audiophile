@@ -1,0 +1,44 @@
+.cta {
+  width: 160px;
+  height: 48px;
+  background-color: $c-pri-orange;
+  color: $c-pri-white;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $c-sec-orange;
+  }
+
+  &--black {
+    background-color: $c-pri-black;
+    &:hover {
+      background-color: hsl(0, 0%, 30%);
+    }
+  }
+
+  &--outline {
+    color: $c-pri-black;
+    background-color: transparent;
+    border: 1px solid $c-pri-black;
+    &:hover {
+      background-color: $c-pri-black;
+      color: $c-pri-white;
+    }
+  }
+
+  &--link {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    font-size: 15px;
+    color: $c-pri-black;
+    opacity: 0.5;
+    text-decoration: underline;
+  }
+}

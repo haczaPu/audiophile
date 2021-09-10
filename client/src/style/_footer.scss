@@ -1,0 +1,49 @@
+.footer {
+  background-color: $c-pri-black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    width: 1440px;
+    height: 365px;
+    padding: 0 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+  &__text {
+    color: $c-pri-white;
+    opacity: 0.5;
+    line-height: 25px;
+    font-size: 15px;
+    font-weight: 300;
+    width: 50%;
+    align-self: flex-start;
+    padding-top: 35px;
+  }
+
+  &__line {
+    width: 101px;
+    height: 75px;
+    border-top: 4px solid $c-pri-orange;
+    align-self: flex-start;
+  }
+
+  &__rights {
+    color: $c-pri-white;
+    opacity: 0.5;
+    font-size: 15px;
+    line-height: 25px;
+    align-self: flex-start;
+    padding-top: 63px;
+  }
+
+  .smedia {
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    width: 110px;
+  }
+}

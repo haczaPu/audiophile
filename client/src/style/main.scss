@@ -1,0 +1,68 @@
+@import "vars";
+@import "bestGear";
+@import "footer";
+@import "headphones";
+@import "speakers";
+@import "earphones";
+@import "productCategories";
+@import "homeMain";
+@import "nav";
+@import "item";
+@import "fonts";
+@import "cta";
+@import "checkout";
+@import "cart";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $mainFont;
+}
+
+.logo {
+  width: 143px;
+  height: 25px;
+}
+
+.home-header {
+  color: $c-pri-white;
+  background-color: rgb(25, 25, 25);
+  padding-top: 96px;
+  width: 100%;
+  height: 729px;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../src/images/image-hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__content {
+    width: 1110px;
+    border-top: hsla(0, 0%, 100%, 0.2) solid 1px;
+  }
+}
+
+.product-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 400px;
+  color: $c-pri-white;
+
+  &__overline {
+    opacity: 0.5;
+  }
+  &__title {
+    padding: 0 0 40px 0;
+    &--p {
+      padding: 40px 0;
+    }
+  }
+
+  &__text {
+    opacity: 0.75;
+    padding-bottom: 38px;
+    width: 350px;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "audiophile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haczaPu/audiophile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haczaPu/audiophile/issues"
+  },
+  "homepage": "https://github.com/haczaPu/audiophile#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.5",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
