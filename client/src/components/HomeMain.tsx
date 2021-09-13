@@ -23,11 +23,7 @@ const HomeMain = () => {
           <ProductCategories />
           <section className="speaker-zx9">
             <div className="speaker-zx9__img-container">
-              <img
-                className="speaker-zx9__img"
-                src="./assets/images/home/desktop/image-speaker-zx9.png"
-                alt="speaker-zx9"
-              />
+              <img className="speaker-zx9__img" src="./assets/home/desktop/image-speaker-zx9.png" alt="speaker-zx9" />
             </div>
             <div className="product-desc speaker-zx9__desc">
               <h1 className="product-desc__title typo--h1">Zx9 speaker</h1>
@@ -46,7 +42,7 @@ const HomeMain = () => {
           <section className="earphones-yx1">
             <img
               className="earphones-yx1__img"
-              src="./assets/images/home/desktop/image-earphones-yx1.jpg"
+              src="./assets/home/desktop/image-earphones-yx1.jpg"
               alt="earphones-yx1"
             />
             <div className="earphones-yx1__desc">

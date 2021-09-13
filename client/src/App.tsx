@@ -10,9 +10,21 @@ import "./style/main.css";
 import Earphones from "./components/Earphones";
 import ScrollToTop from "./components/ScrollToTop";
 import Checkout from "./components/Checkout";
+import Product from "./components/Product";
+
+type SingleProduct = {
+  id: string;
+  slug: string;
+  name: string;
+  image: { mobile: string; tablet: string; desktop: string };
+  category: string;
+  price: number;
+  new: boolean;
+  description: string;
+};
 
 function App() {
-  const [productsData, setProductsData] = useState<Array<Object>>([]);
+  const [productsData, setProductsData] = useState<Array<SingleProduct>>([]);
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
   const [emoneyPayment, setEmoneyPayment] = useState<boolean>(true);
 
@@ -43,11 +55,12 @@ function App() {
           <Route path="/headphones" component={Headphones} />
           <Route path="/speakers" component={Speakers} />
           <Route path="/earphones" component={Earphones} />
-          <Route path="/product/:id" />
-          <Route
-            path="/checkout"
-            render={() => <Checkout emoneyPayment={emoneyPayment} setEmoneyPayment={setEmoneyPayment} />}
-          />
+          <Route path="/product/:id">
+            <Product productsData={productsData} />
+          </Route>
+          <Route path="/checkout">
+            <Checkout emoneyPayment={emoneyPayment} setEmoneyPayment={setEmoneyPayment} />
+          </Route>
         </Switch>
         <Footer />
       </div>

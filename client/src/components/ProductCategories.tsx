@@ -9,7 +9,7 @@ const ProductCategories = () => {
           <div className="product-category">
             <img
               className="product-category__img"
-              src="./assets/images/shared/desktop/image-category-thumbnail-headphones.png"
+              src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
               alt="category-thumbnail-headphones"
             />
             <h4 className="product-category__title">Headphones</h4>
@@ -17,7 +17,7 @@ const ProductCategories = () => {
               <div className="product-category__shop">SHOP</div>
               <img
                 className="product-category__arrow"
-                src="./assets/images/shared/desktop/icon-arrow-right.svg"
+                src="/assets/shared/desktop/icon-arrow-right.svg"
                 alt="arrow-right"
               />
             </button>
@@ -27,7 +27,7 @@ const ProductCategories = () => {
           <div className="product-category">
             <img
               className="product-category__img"
-              src="./assets/images/shared/desktop/image-category-thumbnail-Speakers.png"
+              src="/assets/shared/desktop/image-category-thumbnail-Speakers.png"
               alt="category-thumbnail-headphones"
             />
             <h4 className="product-category__title">Speakers</h4>
@@ -35,7 +35,7 @@ const ProductCategories = () => {
               <div className="product-category__shop">SHOP</div>
               <img
                 className="product-category__arrow"
-                src="./assets/images/shared/desktop/icon-arrow-right.svg"
+                src="/assets/shared/desktop/icon-arrow-right.svg"
                 alt="arrow-right"
               />
             </button>
@@ -45,7 +45,7 @@ const ProductCategories = () => {
           <div className="product-category">
             <img
               className="product-category__img"
-              src="./assets/images/shared/desktop/image-category-thumbnail-Earphones.png"
+              src="/assets/shared/desktop/image-category-thumbnail-Earphones.png"
               alt="category-thumbnail-headphones"
             />
             <h4 className="product-category__title">Earphones</h4>
@@ -53,7 +53,7 @@ const ProductCategories = () => {
               <div className="product-category__shop">SHOP</div>
               <img
                 className="product-category__arrow"
-                src="./assets/images/shared/desktop/icon-arrow-right.svg"
+                src="/assets/shared/desktop/icon-arrow-right.svg"
                 alt="arrow-right"
               />
             </button>

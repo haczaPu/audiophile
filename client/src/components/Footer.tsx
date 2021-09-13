@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer__line"></div>
 
         <div className="nav__bar">
-          <img className="logo" src="./assets/images/shared/desktop/logo.svg" alt="logo" />
+          <img className="logo" src="/assets/shared/desktop/logo.svg" alt="logo" />
           <ul className="nav__menu">
             <Link to="/" style={{ textDecoration: "none" }}>
               <li className="nav__item">Home</li>

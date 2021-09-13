@@ -1,6 +1,11 @@
 import React from "react";
 import BestGearSection from "./BestGearSection";
 import ProductCategories from "./ProductCategories";
+import { Link } from "react-router-dom";
+
+// type HeadphonesProps = {
+//   productsData: Array<Object>;
+// };
 
 const Headphones = () => {
   return (
@@ -14,7 +19,7 @@ const Headphones = () => {
         <div className="item">
           <img
             className="item__img"
-            src="./assets/images/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+            src="./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">
@@ -24,13 +29,21 @@ const Headphones = () => {
               The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone
               experience by reproducing the balanced depth and precision of studio-quality sound.
             </p>
-            <button className="cta">See product</button>
+            <Link to="/product/1" style={{ textDecoration: "none" }}>
+              <button className="cta">See product</button>
+            </Link>
+            <Link to="/product/2" style={{ textDecoration: "none" }}>
+              <button className="cta">See product</button>
+            </Link>
+            <Link to="/product/3" style={{ textDecoration: "none" }}>
+              <button className="cta">See product</button>
+            </Link>
           </div>
         </div>
         <div className="item item--left">
           <img
             className="item__img item__img--left"
-            src="./assets/images/product-xx99-mark-one-headphones/desktop/image-product.jpg"
+            src="./assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">
@@ -45,7 +58,7 @@ const Headphones = () => {
         <div className="item">
           <img
             className="item__img"
-            src="./assets/images/product-xx59-headphones/desktop/image-product.jpg"
+            src="./assets/product-xx59-headphones/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">

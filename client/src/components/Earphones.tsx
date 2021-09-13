@@ -14,7 +14,7 @@ const Earphones = () => {
         <div className="item">
           <img
             className="item__img"
-            src="./assets/images/product-yx1-earphones/desktop/image-product.jpg"
+            src="./assets/product-yx1-earphones/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">

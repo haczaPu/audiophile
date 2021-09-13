@@ -14,7 +14,7 @@ const Speakers = () => {
         <div className="item">
           <img
             className="item__img"
-            src="./assets/images/product-zx9-speaker/desktop/image-product.jpg"
+            src="./assets/product-zx9-speaker/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">
@@ -32,7 +32,7 @@ const Speakers = () => {
         <div className="item item--left">
           <img
             className="item__img item__img--left"
-            src="./assets/images/product-zx7-speaker/desktop/image-product.jpg"
+            src="./assets/product-zx7-speaker/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">

@@ -33,19 +33,6 @@
   }
 }
 
-.go-back {
-  align-self: flex-start;
-  color: $c-sec-grey;
-  outline: none;
-  border: hidden;
-  background-color: transparent;
-  cursor: pointer;
-  text-align: left;
-  &:hover {
-    color: $c-pri-orange;
-  }
-}
-
 .form {
   &__title {
     color: $c-pri-orange;

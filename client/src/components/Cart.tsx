@@ -15,7 +15,7 @@ const Cart = ({ setCartIsOpen }: CartProps) => {
         </div>
         <div className="summary__product-list">
           <div className="summary-item">
-            <img className="summary-item__img" src="./assets/images/cart/image-xx99-mark-two-headphones.jpg" alt="" />
+            <img className="summary-item__img" src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="" />
             <div className="summary-item__details">
               <div className="summary-item__name">XX99 MK II</div>
               <div className="summary-item__price">$ 2,999</div>
@@ -28,7 +28,7 @@ const Cart = ({ setCartIsOpen }: CartProps) => {
           </div>
 
           <div className="summary-item">
-            <img className="summary-item__img" src="./assets/images/cart/image-xx99-mark-two-headphones.jpg" alt="" />
+            <img className="summary-item__img" src="./assets/cart/image-xx99-mark-two-headphones.jpg" alt="" />
             <div className="summary-item__details">
               <div className="summary-item__name">XX99 MK II</div>
               <div className="summary-item__price">$ 2,999</div>
