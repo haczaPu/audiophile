@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 
 type CartProps = {
   setCartIsOpen: any;
+  forwardedRef: any;
 };
 
-const Cart = ({ setCartIsOpen }: CartProps) => {
+const Cart = ({ setCartIsOpen, forwardedRef }: CartProps) => {
   return (
     <>
-      <div className="cart">
+      <div className="cart" ref={forwardedRef}>
         <div className="cart__top">
           <div className="cart__title typo--h6">CART (3)</div>
           <button className="cta--link typo--sub">Remove all</button>

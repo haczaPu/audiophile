@@ -19,7 +19,7 @@ const Headphones = () => {
         <div className="item">
           <img
             className="item__img"
-            src="./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+            src="/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">
@@ -43,7 +43,7 @@ const Headphones = () => {
         <div className="item item--left">
           <img
             className="item__img item__img--left"
-            src="./assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
+            src="/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">
@@ -58,7 +58,7 @@ const Headphones = () => {
         <div className="item">
           <img
             className="item__img"
-            src="./assets/product-xx59-headphones/desktop/image-product.jpg"
+            src="/assets/product-xx59-headphones/desktop/image-product.jpg"
             alt="xx99-mark-two-headphones"
           />
           <div className="item-desc">

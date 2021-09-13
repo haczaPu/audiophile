@@ -7,9 +7,12 @@ import Cart from "./Cart";
 type NavProps = {
   cartIsOpen: boolean;
   setCartIsOpen: any;
+  innerRef: any;
+  handleClickOutside: any;
+  handleClickInside: any;
 };
 
-const Nav = ({ cartIsOpen, setCartIsOpen }: NavProps) => {
+const Nav = ({ cartIsOpen, setCartIsOpen, innerRef, handleClickInside }: NavProps) => {
   return (
     <div className="nav">
       <div className="nav__bar">
@@ -29,8 +32,8 @@ const Nav = ({ cartIsOpen, setCartIsOpen }: NavProps) => {
           </Link>
         </ul>
         <IconContext.Provider value={{ className: "nav__cart", size: "25px" }}>
-          <HiOutlineShoppingCart onClick={() => setCartIsOpen(!cartIsOpen)} />
-          {cartIsOpen ? <Cart setCartIsOpen={setCartIsOpen} /> : null}
+          <HiOutlineShoppingCart onClick={handleClickInside} />
+          {cartIsOpen ? <Cart setCartIsOpen={setCartIsOpen} forwardedRef={innerRef} /> : null}
         </IconContext.Provider>
       </div>
     </div>

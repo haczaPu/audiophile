@@ -31,12 +31,23 @@
   width: 96px;
   height: 32px;
 
+  &--lg {
+    width: 120px;
+    height: 48px;
+  }
+
   &__value {
     background-color: $c-pri-grey;
     width: 32px;
     height: 32px;
     text-align: center;
     padding-top: 5px;
+
+    &--lg {
+      width: 48px;
+      height: 48px;
+      padding-top: 12px;
+    }
   }
 
   &__btn {
@@ -49,5 +60,9 @@
     color: $c-sec-grey;
     font-weight: bold;
     font-size: 13px;
+    &--lg {
+      width: 48px;
+      height: 48px;
+    }
   }
 }

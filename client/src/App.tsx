@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import useOnClickOutside from "./hooks/useOnClickOutside";
+import "./style/main.css";
+
+//Import components
 import Footer from "./components/Footer";
 import HomeMain from "./components/HomeMain";
 import Headphones from "./components/Headphones";
 import Speakers from "./components/Speakers";
-
 import Nav from "./components/Nav";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./style/main.css";
 import Earphones from "./components/Earphones";
 import ScrollToTop from "./components/ScrollToTop";
 import Checkout from "./components/Checkout";
@@ -26,8 +28,10 @@ type SingleProduct = {
 function App() {
   const [productsData, setProductsData] = useState<Array<SingleProduct>>([]);
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
+  const ref = useRef(null);
   const [emoneyPayment, setEmoneyPayment] = useState<boolean>(true);
 
+  //Fetching products data
   useEffect(() => {
     fetch("http://localhost:3001/api", {
       headers: {
@@ -44,11 +48,29 @@ function App() {
       .catch(console.error);
   }, []);
 
+  // Cart modal handlers
+  const handleClickOutside = () => {
+    setCartIsOpen(false);
+  };
+
+  const handleClickInside = () => {
+    setCartIsOpen(true);
+  };
+
+  //React hook listening for clicks outside of a cart modal
+  useOnClickOutside(ref, handleClickOutside);
+
   return (
     <Router>
       <div className="App">
         <ScrollToTop />
-        <Nav cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} />
+        <Nav
+          cartIsOpen={cartIsOpen}
+          setCartIsOpen={setCartIsOpen}
+          handleClickOutside={handleClickOutside}
+          innerRef={ref}
+          handleClickInside={handleClickInside}
+        />
         {cartIsOpen ? <div className="cart__bg"></div> : null}
         <Switch>
           <Route path="/" exact component={HomeMain} />

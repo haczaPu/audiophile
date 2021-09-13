@@ -15,6 +15,10 @@
   &--left {
     flex-direction: row-reverse;
   }
+
+  &--margin-s {
+    margin-top: 60px;
+  }
 }
 
 .item-desc {
@@ -37,5 +41,9 @@
     &--black {
       color: $c-pri-black;
     }
+  }
+
+  &__price {
+    padding-bottom: 50px;
   }
 }

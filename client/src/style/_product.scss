@@ -22,3 +22,65 @@
     width: 1110px;
   }
 }
+
+.add-to-cart {
+  display: flex;
+  gap: 16px;
+}
+
+.features-section {
+  width: 1110px;
+  display: flex;
+  margin-top: 160px;
+  gap: 120px;
+}
+
+.features {
+  flex: 0.8;
+
+  &__text {
+    margin-top: 30px;
+  }
+}
+
+.in-the-box {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 30px;
+    gap: 10px;
+
+    padding: 0;
+    color: $c-pri-orange;
+    font-weight: bold;
+  }
+
+  &__item {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.gallery {
+  display: grid;
+  gap: 30px;
+  width: 1110px;
+  margin-top: 150px;
+
+  &__image {
+    border-radius: 8px;
+
+    &--2 {
+      grid-row: 2 /3;
+      grid-column: 1 / 2;
+    }
+    &--3 {
+      grid-row: 1 / 3;
+      grid-column: 2 / 3;
+    }
+  }
+}

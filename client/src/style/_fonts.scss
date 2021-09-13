@@ -67,4 +67,11 @@
     font-weight: 400;
     letter-spacing: -0.21px;
   }
+
+  &--common {
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+    color: $c-sec-grey;
+  }
 }
