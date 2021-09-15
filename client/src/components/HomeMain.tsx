@@ -14,7 +14,7 @@ const HomeMain = () => {
             <p className="product-desc__text typo--sub">
               Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast
             </p>
-            <Link to="/product/4" style={{ textDecoration: "none" }}>
+            <Link to="/product/xx99-mark-two-headphones" style={{ textDecoration: "none" }}>
               <button className="cta">See product</button>
             </Link>
           </div>
@@ -32,13 +32,17 @@ const HomeMain = () => {
               <p className="product-desc__text typo--sub">
                 Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
               </p>
-              <button className="cta cta--black">See product</button>
+              <Link to="/product/zx9-speaker" style={{ textDecoration: "none" }}>
+                <button className="cta cta--black">See product</button>
+              </Link>
             </div>
           </section>
           <section className="speaker-zx7">
             <div className="product-desc">
               <h4 className="product-desc__title  typo--black typo--h4">Zx7 speaker</h4>
-              <button className="cta cta--outline">See product</button>
+              <Link to="/product/zx7-speaker" style={{ textDecoration: "none" }}>
+                <button className="cta cta--outline">See product</button>
+              </Link>
             </div>
           </section>
           <section className="earphones-yx1">
@@ -50,7 +54,9 @@ const HomeMain = () => {
             <div className="earphones-yx1__desc">
               <div className="product-desc">
                 <h4 className="product-desc__title typo--h4 typo--black">Yx1 earphones</h4>
-                <button className="cta cta--outline">See product</button>
+                <Link to="/product/yx1-earphones" style={{ textDecoration: "none" }}>
+                  <button className="cta cta--outline">See product</button>
+                </Link>
               </div>
             </div>
           </section>

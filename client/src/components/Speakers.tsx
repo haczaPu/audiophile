@@ -27,7 +27,7 @@ const Speakers = () => {
               Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers
               truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.
             </p>
-            <Link to="/product/6" style={{ textDecoration: "none" }}>
+            <Link to="/product/zx9-speaker" style={{ textDecoration: "none" }}>
               <button className="cta">See product</button>
             </Link>
           </div>
@@ -46,7 +46,7 @@ const Speakers = () => {
               Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile
               components that represents the top of the line powered speakers for home or studio use.
             </p>
-            <Link to="/product/5" style={{ textDecoration: "none" }}>
+            <Link to="/product/zx7-speaker" style={{ textDecoration: "none" }}>
               <button className="cta">See product</button>
             </Link>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Dispatch, SetStateAction } from "react";
+import { useHistory } from "react-router-dom";
 
 type Order = {
   name: string;
@@ -28,23 +28,30 @@ const Checkout = ({ emoneyPayment, setEmoneyPayment }: CheckoutProps) => {
     handleSubmit,
     formState: { errors },
   } = useForm<Order>();
+  const history = useHistory();
 
+  //Submit form
   const onSubmit = handleSubmit(data => {
     alert(JSON.stringify(data));
   });
 
+  //Change payment handler
   const onChangePayment = () => {
     setEmoneyPayment(!emoneyPayment);
   };
 
+  //Go back handler
+  const goBackHandle = () => {
+    history.goBack();
+  };
   return (
     <>
       <div className="checkout">
         <div className="checkout__header"></div>
         <div className="checkout__main">
-          <Link to="/" style={{ textDecoration: "none" }} className="go-back">
+          <button className="go-back" onClick={goBackHandle}>
             Go Back
-          </Link>
+          </button>
           <form className="docs-wrapper" onSubmit={onSubmit}>
             <div className="checkout__form">
               <h4 className="typo--h4">Checkout</h4>

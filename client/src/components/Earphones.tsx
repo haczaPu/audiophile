@@ -27,7 +27,7 @@ const Earphones = () => {
               Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy
               incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.
             </p>
-            <Link to="/product/1" style={{ textDecoration: "none" }}>
+            <Link to="/product/yx1-earphones" style={{ textDecoration: "none" }}>
               <button className="cta">See product</button>
             </Link>
           </div>

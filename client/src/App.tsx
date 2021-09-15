@@ -20,14 +20,12 @@ type Includes = {
 };
 
 type Others = {
-  others: {
-    slug: string;
-    name: string;
-    image: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
+  slug: string;
+  name: string;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
   };
 };
 
@@ -102,7 +100,7 @@ function App() {
           <Route path="/headphones" component={Headphones} />
           <Route path="/speakers" component={Speakers} />
           <Route path="/earphones" component={Earphones} />
-          <Route path="/product/:id">
+          <Route path="/product/:slug">
             <Product productsData={productsData} />
           </Route>
           <Route path="/checkout">

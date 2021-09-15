@@ -84,3 +84,31 @@
     }
   }
 }
+
+.others-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1110px;
+
+  &__title {
+    margin: 160px 0 60px 0;
+  }
+  .others {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+}
