@@ -16,7 +16,9 @@ const Nav = ({ cartIsOpen, setCartIsOpen, innerRef, handleClickInside }: NavProp
   return (
     <div className="nav">
       <div className="nav__bar">
-        <img className="logo" src="/assets/shared/desktop/logo.svg" alt="logo"></img>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <img className="logo" src="/assets/shared/desktop/logo.svg" alt="logo"></img>
+        </Link>
         <ul className="nav__menu">
           <Link to="/" style={{ textDecoration: "none" }}>
             <li className="nav__item">Home</li>

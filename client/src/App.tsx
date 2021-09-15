@@ -14,15 +14,40 @@ import ScrollToTop from "./components/ScrollToTop";
 import Checkout from "./components/Checkout";
 import Product from "./components/Product";
 
+type Includes = {
+  quantity: number;
+  item: string;
+};
+
+type Others = {
+  others: {
+    slug: string;
+    name: string;
+    image: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+  };
+};
+
 type SingleProduct = {
-  id: string;
+  id: number;
   slug: string;
   name: string;
   image: { mobile: string; tablet: string; desktop: string };
   category: string;
-  price: number;
   new: boolean;
+  price: number;
   description: string;
+  features: string;
+  includes: Array<Includes>;
+  gallery: {
+    first: { mobile: string; tablet: string; desktop: string };
+    second: { mobile: string; tablet: string; desktop: string };
+    third: { mobile: string; tablet: string; desktop: string };
+  };
+  others: Array<Others>;
 };
 
 function App() {
@@ -48,7 +73,7 @@ function App() {
       .catch(console.error);
   }, []);
 
-  // Cart modal handlers
+  //Cart modal handlers
   const handleClickOutside = () => {
     setCartIsOpen(false);
   };

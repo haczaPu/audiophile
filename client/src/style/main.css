@@ -1087,6 +1087,10 @@
   height: 48px;
 }
 
+.quantity__btn:hover {
+  color: #d97e4a;
+}
+
 .product-header {
   color: white;
   background-color: #191919;

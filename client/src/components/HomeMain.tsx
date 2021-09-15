@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import BestGearSection from "./BestGearSection";
 import ProductCategories from "./ProductCategories";
 
@@ -13,11 +14,12 @@ const HomeMain = () => {
             <p className="product-desc__text typo--sub">
               Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast
             </p>
-            <button className="cta">See product</button>
+            <Link to="/product/4" style={{ textDecoration: "none" }}>
+              <button className="cta">See product</button>
+            </Link>
           </div>
         </div>
       </div>
-
       <div className="home-main">
         <div className="home-main__content">
           <ProductCategories />
