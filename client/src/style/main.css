@@ -988,6 +988,7 @@
   color: black;
   font-weight: bold;
   line-height: 25px;
+  text-transform: uppercase;
 }
 
 .summary-item__price {
@@ -1022,6 +1023,10 @@
   top: 130px;
   padding: 32px;
   z-index: 2;
+}
+
+.cart--empty {
+  text-align: center;
 }
 
 .cart__top {

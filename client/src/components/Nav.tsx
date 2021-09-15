@@ -3,16 +3,9 @@ import { IconContext } from "react-icons";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
+import { NavProps } from "../types/Types";
 
-type NavProps = {
-  cartIsOpen: boolean;
-  setCartIsOpen: any;
-  innerRef: any;
-  handleClickOutside: any;
-  handleClickInside: any;
-};
-
-const Nav = ({ cartIsOpen, setCartIsOpen, innerRef, handleClickInside }: NavProps) => {
+const Nav = ({ cartIsOpen, setCartIsOpen, innerRef, handleClickInside, cartItems, removeAllHandler }: NavProps) => {
   return (
     <div className="nav">
       <div className="nav__bar">
@@ -35,7 +28,14 @@ const Nav = ({ cartIsOpen, setCartIsOpen, innerRef, handleClickInside }: NavProp
         </ul>
         <IconContext.Provider value={{ className: "nav__cart", size: "25px" }}>
           <HiOutlineShoppingCart onClick={handleClickInside} />
-          {cartIsOpen ? <Cart setCartIsOpen={setCartIsOpen} forwardedRef={innerRef} /> : null}
+          {cartIsOpen ? (
+            <Cart
+              removeAllHandler={removeAllHandler}
+              cartItems={cartItems}
+              setCartIsOpen={setCartIsOpen}
+              forwardedRef={innerRef}
+            />
+          ) : null}
         </IconContext.Provider>
       </div>
     </div>

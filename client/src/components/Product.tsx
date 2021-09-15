@@ -1,49 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import BestGearSection from "./BestGearSection";
 import ProductCategories from "./ProductCategories";
+import { Includes, ProductsData, SingleProduct, Others } from "../types/Types";
 
-type ProductsData = {
-  productsData: Array<SingleProduct>;
-};
-
-type Includes = {
-  quantity: number;
-  item: string;
-};
-
-type Others = {
-  slug: string;
-  name: string;
-  image: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-};
-
-type SingleProduct = {
-  id: number;
-  slug: string;
-  name: string;
-  image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  new: boolean;
-  price: number;
-  description: string;
-  features: string;
-  includes: Array<Includes>;
-  gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
-  };
-  others: Array<Others>;
-};
-
-const Product = ({ productsData }: ProductsData) => {
+const Product = ({ productsData, cartItems, setCartItems }: ProductsData) => {
   const { slug } = useParams<{ slug: string }>();
   const history = useHistory();
+  const [quantityValue, setQuantityValue] = useState<number>(1);
 
   //Go back handler
   const goBackHandle = () => {
@@ -52,6 +16,50 @@ const Product = ({ productsData }: ProductsData) => {
 
   //Find selected product
   const product: SingleProduct = productsData.find((ele: SingleProduct) => ele.slug === slug)!;
+
+  //Add to cart
+  const onAdd: Function = (productToAdd: SingleProduct, quantityValue: number) => {
+    const existItem = cartItems.find((x: any) => x.name === productToAdd.name);
+    if (existItem) {
+      setCartItems(
+        cartItems.map((x: any) =>
+          x.name === productToAdd.name ? { ...existItem, qty: existItem.qty + 1 * quantityValue } : x
+        )
+      );
+    } else {
+      setCartItems([
+        ...cartItems,
+        {
+          id: productToAdd.id,
+          slug: productToAdd.slug,
+          name: productToAdd.name,
+          price: productToAdd.price,
+          qty: 1 * quantityValue,
+          image: productToAdd.image.mobile,
+        },
+      ]);
+    }
+    setQuantityValue(1);
+  };
+
+  //Increase quantity
+  const increaseQty: any = () => {
+    setQuantityValue(quantityValue + 1);
+  };
+
+  //Increase quantity
+  const decreaseQty: any = () => {
+    if (quantityValue === 1) {
+      setQuantityValue(1);
+    } else {
+      setQuantityValue(quantityValue - 1);
+    }
+  };
+
+  //Add to cart
+  // const addToCartHandler = () => {
+  //   setCartItems([...cartItems, { name: product.name, price: product.price, qty: 1 }]);
+  // };
 
   return (
     <>
@@ -74,12 +82,18 @@ const Product = ({ productsData }: ProductsData) => {
               </div>
               <div className="add-to-cart">
                 <div className="quantity quantity--lg">
-                  <button className="quantity__btn quantity__btn--lg">+</button>
-                  <div className="quantity__value quantity__value--lg typo--h6">1</div>
-                  <button className="quantity__btn quantity__btn--lg">-</button>
+                  <button className="quantity__btn quantity__btn--lg" onClick={increaseQty}>
+                    +
+                  </button>
+                  <div className="quantity__value quantity__value--lg typo--h6">{quantityValue}</div>
+                  <button className="quantity__btn quantity__btn--lg" onClick={decreaseQty}>
+                    -
+                  </button>
                 </div>
 
-                <button className="cta">Add to cart</button>
+                <button className="cta" onClick={() => onAdd(product, quantityValue)}>
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
@@ -97,8 +111,8 @@ const Product = ({ productsData }: ProductsData) => {
             <div className="in-the-box">
               <h3 className="typo--h3">IN THE BOX</h3>
               <ul className="in-the-box__list">
-                {product.includes.map((ele: Includes) => (
-                  <li className="in-the-box__item">
+                {product.includes.map((ele: Includes, i: number) => (
+                  <li key={i} className="in-the-box__item">
                     <div className="typo--orange">{ele.quantity}x</div>
                     <div className="typo--common">{ele.item}</div>
                   </li>
@@ -114,8 +128,8 @@ const Product = ({ productsData }: ProductsData) => {
           <div className="others-wrapper">
             <h3 className="others-wrapper__title typo--h3">YOU MAY ALSO LIKE</h3>
             <div className="others">
-              {product.others.map((p: Others) => (
-                <div className="others__item">
+              {product.others.map((p: Others, i: number) => (
+                <div key={i} className="others__item">
                   <img className="others__img" src={p.image.desktop} alt="" />
                   <h5 className="typo--h5">{p.name}</h5>
                   <Link to={`/product/${p.slug}`} style={{ textDecoration: "none" }}>

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import useOnClickOutside from "./hooks/useOnClickOutside";
 import "./style/main.css";
+import { ItemInCart, SingleProduct } from "./types/Types";
 
 //Import components
 import Footer from "./components/Footer";
@@ -14,43 +15,10 @@ import ScrollToTop from "./components/ScrollToTop";
 import Checkout from "./components/Checkout";
 import Product from "./components/Product";
 
-type Includes = {
-  quantity: number;
-  item: string;
-};
-
-type Others = {
-  slug: string;
-  name: string;
-  image: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-};
-
-type SingleProduct = {
-  id: number;
-  slug: string;
-  name: string;
-  image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  new: boolean;
-  price: number;
-  description: string;
-  features: string;
-  includes: Array<Includes>;
-  gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
-  };
-  others: Array<Others>;
-};
-
 function App() {
   const [productsData, setProductsData] = useState<Array<SingleProduct>>([]);
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
+  const [cartItems, setCartItems] = useState<Array<ItemInCart>>([]);
   const ref = useRef(null);
   const [emoneyPayment, setEmoneyPayment] = useState<boolean>(true);
 
@@ -80,6 +48,11 @@ function App() {
     setCartIsOpen(true);
   };
 
+  //Remove all items from cart
+  const removeAllHandler = () => {
+    setCartItems([]);
+  };
+
   //React hook listening for clicks outside of a cart modal
   useOnClickOutside(ref, handleClickOutside);
 
@@ -89,10 +62,12 @@ function App() {
         <ScrollToTop />
         <Nav
           cartIsOpen={cartIsOpen}
+          cartItems={cartItems}
           setCartIsOpen={setCartIsOpen}
           handleClickOutside={handleClickOutside}
           innerRef={ref}
           handleClickInside={handleClickInside}
+          removeAllHandler={removeAllHandler}
         />
         {cartIsOpen ? <div className="cart__bg"></div> : null}
         <Switch>
@@ -101,7 +76,7 @@ function App() {
           <Route path="/speakers" component={Speakers} />
           <Route path="/earphones" component={Earphones} />
           <Route path="/product/:slug">
-            <Product productsData={productsData} />
+            <Product productsData={productsData} cartItems={cartItems} setCartItems={setCartItems} />
           </Route>
           <Route path="/checkout">
             <Checkout emoneyPayment={emoneyPayment} setEmoneyPayment={setEmoneyPayment} />
