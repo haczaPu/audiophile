@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import useOnClickOutside from "./hooks/useOnClickOutside";
 import "./style/main.css";
 import { ItemInCart, SingleProduct } from "./types/Types";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 //Import components
 import Footer from "./components/Footer";
@@ -18,7 +19,7 @@ import Product from "./components/Product";
 function App() {
   const [productsData, setProductsData] = useState<Array<SingleProduct>>([]);
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
-  const [cartItems, setCartItems] = useState<Array<ItemInCart>>([]);
+  const [cartItems, setCartItems] = useLocalStorage<Array<ItemInCart>>("cart items", []);
   const ref = useRef(null);
   const [emoneyPayment, setEmoneyPayment] = useState<boolean>(true);
 
