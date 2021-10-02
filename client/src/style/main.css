@@ -707,6 +707,11 @@
   color: black;
   opacity: 0.5;
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.cta--link:hover {
+  color: #d97e4a;
 }
 
 .checkout {
@@ -722,6 +727,7 @@
           align-items: center;
   width: 100%;
   background-color: #f2f2f2;
+  min-height: 1000px;
 }
 
 .checkout__header {
@@ -758,6 +764,10 @@
   width: 730px;
   border-radius: 8px;
   padding: 60px 48px 48px 48px;
+}
+
+.checkout__empty-cart {
+  padding-top: 10%;
 }
 
 .form__title {

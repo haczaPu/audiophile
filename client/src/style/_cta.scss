@@ -53,5 +53,10 @@
     color: $c-pri-black;
     opacity: 0.5;
     text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: $c-pri-orange;
+    }
   }
 }

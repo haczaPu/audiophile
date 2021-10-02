@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import BestGearSection from "./BestGearSection";
 import ProductCategories from "./ProductCategories";
-import { Includes, ProductsData, SingleProduct, Others } from "../types/Types";
+import { Includes, ProductsData, SingleProduct, Others, ItemInCart } from "../types/Types";
 
 const Product = ({ productsData, cartItems, setCartItems }: ProductsData) => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,10 +19,10 @@ const Product = ({ productsData, cartItems, setCartItems }: ProductsData) => {
 
   //Add to cart
   const onAdd: Function = (productToAdd: SingleProduct, quantityValue: number) => {
-    const existItem = cartItems.find((x: any) => x.name === productToAdd.name);
+    const existItem = cartItems.find((x: ItemInCart) => x.name === productToAdd.name);
     if (existItem) {
       setCartItems(
-        cartItems.map((x: any) =>
+        cartItems.map((x: ItemInCart) =>
           x.name === productToAdd.name ? { ...existItem, qty: existItem.qty + 1 * quantityValue } : x
         )
       );

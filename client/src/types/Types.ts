@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type ProductsData = {
   productsData: Array<SingleProduct>;
   cartItems: any;
@@ -49,6 +51,7 @@ export type CartProps = {
   setCartIsOpen: any;
   forwardedRef: any;
   cartItems: Array<ItemInCart>;
+  setCartItems: any;
   removeAllHandler: any;
 };
 
@@ -59,5 +62,26 @@ export type NavProps = {
   handleClickOutside: any;
   handleClickInside: any;
   cartItems: Array<ItemInCart>;
+  setCartItems: any;
   removeAllHandler: any;
+};
+
+export type CheckoutProps = {
+  emoneyPayment: boolean;
+  setEmoneyPayment: Dispatch<SetStateAction<boolean>>;
+  cartItems: Array<ItemInCart>;
+};
+
+export type Order = {
+  name: string;
+  email: string;
+  phonenumber: string;
+  address: string;
+  zipcode: string;
+  city: string;
+  country: string;
+  paymentmethod: any;
+  emoneynumber: number;
+  emoneypin: number;
+  errors: any;
 };

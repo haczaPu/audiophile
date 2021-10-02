@@ -4,6 +4,7 @@
   align-items: center;
   width: 100%;
   background-color: $c-pri-grey;
+  min-height: 1000px;
 
   &__header {
     background-color: $c-pri-black;
@@ -30,6 +31,10 @@
     width: 730px;
     border-radius: 8px;
     padding: 60px 48px 48px 48px;
+  }
+
+  &__empty-cart {
+    padding-top: 10%;
   }
 }
 

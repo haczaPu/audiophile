@@ -63,6 +63,7 @@ function App() {
         <Nav
           cartIsOpen={cartIsOpen}
           cartItems={cartItems}
+          setCartItems={setCartItems}
           setCartIsOpen={setCartIsOpen}
           handleClickOutside={handleClickOutside}
           innerRef={ref}
@@ -79,7 +80,7 @@ function App() {
             <Product productsData={productsData} cartItems={cartItems} setCartItems={setCartItems} />
           </Route>
           <Route path="/checkout">
-            <Checkout emoneyPayment={emoneyPayment} setEmoneyPayment={setEmoneyPayment} />
+            <Checkout emoneyPayment={emoneyPayment} setEmoneyPayment={setEmoneyPayment} cartItems={cartItems} />
           </Route>
         </Switch>
         <Footer />

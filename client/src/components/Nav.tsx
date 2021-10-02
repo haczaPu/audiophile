@@ -5,7 +5,15 @@ import { Link } from "react-router-dom";
 import Cart from "./Cart";
 import { NavProps } from "../types/Types";
 
-const Nav = ({ cartIsOpen, setCartIsOpen, innerRef, handleClickInside, cartItems, removeAllHandler }: NavProps) => {
+const Nav = ({
+  cartIsOpen,
+  setCartIsOpen,
+  innerRef,
+  handleClickInside,
+  cartItems,
+  setCartItems,
+  removeAllHandler,
+}: NavProps) => {
   return (
     <div className="nav">
       <div className="nav__bar">
@@ -32,6 +40,7 @@ const Nav = ({ cartIsOpen, setCartIsOpen, innerRef, handleClickInside, cartItems
             <Cart
               removeAllHandler={removeAllHandler}
               cartItems={cartItems}
+              setCartItems={setCartItems}
               setCartIsOpen={setCartIsOpen}
               forwardedRef={innerRef}
             />
