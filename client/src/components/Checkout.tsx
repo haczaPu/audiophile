@@ -2,8 +2,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { CheckoutProps, Order, ItemInCart } from "../types/Types";
+import OrderModal from "./OrderModal";
 
-const Checkout = ({ emoneyPayment, setEmoneyPayment, cartItems }: CheckoutProps) => {
+const Checkout = ({
+  emoneyPayment,
+  setEmoneyPayment,
+  cartItems,
+  orderModalIsOpen,
+  setOrderModalIsOpen,
+}: CheckoutProps) => {
   const {
     register,
     handleSubmit,
@@ -34,6 +41,9 @@ const Checkout = ({ emoneyPayment, setEmoneyPayment, cartItems }: CheckoutProps)
   };
   return (
     <>
+      {!orderModalIsOpen && (
+        <OrderModal grandtotal={grandtotal} setOrderModalIsOpen={setOrderModalIsOpen} cartItems={cartItems} />
+      )}
       <div className="checkout">
         <div className="checkout__header"></div>
         <div className="checkout__main">
@@ -397,7 +407,7 @@ const Checkout = ({ emoneyPayment, setEmoneyPayment, cartItems }: CheckoutProps)
                     <div key={i} className="summary-item">
                       <img className="summary-item__img" src={`./assets/cart/image-${item.slug}.jpg`} alt="" />
                       <div className="summary-item__details">
-                        <div className="summary-item__name">{item.name}</div>
+                        <div className="summary-item__name">{item.name.substring(0, item.name.lastIndexOf(" "))}</div>
                         <div className="summary-item__price">
                           $ {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         </div>
@@ -431,7 +441,7 @@ const Checkout = ({ emoneyPayment, setEmoneyPayment, cartItems }: CheckoutProps)
               </div>
             </form>
           ) : (
-            <div className="checkout__empty-cart typo--h4 ">ADD ITEMS TO ORDER</div>
+            <div className="checkout__empty-cart typo--h4">ADD ITEMS TO ORDER</div>
           )}
         </div>
       </div>

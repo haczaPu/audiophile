@@ -70,6 +70,8 @@ export type CheckoutProps = {
   emoneyPayment: boolean;
   setEmoneyPayment: Dispatch<SetStateAction<boolean>>;
   cartItems: Array<ItemInCart>;
+  orderModalIsOpen: boolean;
+  setOrderModalIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export type Order = {
@@ -84,4 +86,10 @@ export type Order = {
   emoneynumber: number;
   emoneypin: number;
   errors: any;
+};
+
+export type OrderModalProps = {
+  cartItems: Array<ItemInCart>;
+  setOrderModalIsOpen: Dispatch<SetStateAction<boolean>>;
+  grandtotal: number;
 };

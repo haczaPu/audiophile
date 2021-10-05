@@ -19,6 +19,7 @@ import Product from "./components/Product";
 function App() {
   const [productsData, setProductsData] = useState<Array<SingleProduct>>([]);
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
+  const [orderModalIsOpen, setOrderModalIsOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useLocalStorage<Array<ItemInCart>>("cart items", []);
   const ref = useRef(null);
   const [emoneyPayment, setEmoneyPayment] = useState<boolean>(true);
@@ -81,7 +82,13 @@ function App() {
             <Product productsData={productsData} cartItems={cartItems} setCartItems={setCartItems} />
           </Route>
           <Route path="/checkout">
-            <Checkout emoneyPayment={emoneyPayment} setEmoneyPayment={setEmoneyPayment} cartItems={cartItems} />
+            <Checkout
+              emoneyPayment={emoneyPayment}
+              setEmoneyPayment={setEmoneyPayment}
+              cartItems={cartItems}
+              orderModalIsOpen={orderModalIsOpen}
+              setOrderModalIsOpen={setOrderModalIsOpen}
+            />
           </Route>
         </Switch>
         <Footer />

@@ -48,7 +48,7 @@ const Cart = ({ setCartIsOpen, forwardedRef, cartItems, setCartItems, removeAllH
                 <div key={i} className="summary-item">
                   <img className="summary-item__img" src={`/assets/cart/image-${item.slug}.jpg`} alt="" />
                   <div className="summary-item__details">
-                    <div className="summary-item__name">{item.name}</div>
+                    <div className="summary-item__name">{item.name.substring(0, item.name.lastIndexOf(" "))}</div>
                     <div className="summary-item__price">
                       $ {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                     </div>
