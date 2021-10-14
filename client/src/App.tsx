@@ -17,6 +17,7 @@ import Checkout from "./components/Checkout";
 import Product from "./components/Product";
 
 function App() {
+  // const [width, setWidth] = useState<number>(window.innerWidth);
   const [productsData, setProductsData] = useState<Array<SingleProduct>>([]);
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
   const [orderModalIsOpen, setOrderModalIsOpen] = useState<boolean>(false);
@@ -74,7 +75,9 @@ function App() {
         />
         {cartIsOpen ? <div className="cart__bg"></div> : null}
         <Switch>
-          <Route path="/" exact component={HomeMain} />
+          <Route path="/" exact>
+            <HomeMain />
+          </Route>
           <Route path="/headphones" component={Headphones} />
           <Route path="/speakers" component={Speakers} />
           <Route path="/earphones" component={Earphones} />

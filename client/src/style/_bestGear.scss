@@ -1,15 +1,45 @@
+@import "breakpoints";
+
 .best-gear {
   width: 100%;
   display: flex;
   justify-content: center;
   text-transform: uppercase;
   margin: 200px 0;
+  @include breakpoint(desktop) {
+    margin: 70px 0 100px 0;
+  }
+  @include breakpoint(tablet) {
+    margin: 70px 0 100px 0;
+  }
+  @include breakpoint(mobile) {
+    margin: 70px 0 100px 0;
+  }
 
   &__wrapper {
     width: 1110px;
-    display: grid;
+    display: flex;
     gap: 30px;
-    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+
+    @include breakpoint(desktop) {
+      margin: 0 40px;
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    @include breakpoint(tablet) {
+      margin: 0 40px;
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    @include breakpoint(mobile) {
+      margin: 0 40px;
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   &__desc {
@@ -17,12 +47,39 @@
     flex-direction: column;
     justify-content: center;
     width: 445px;
+    @include breakpoint(desktop) {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+    }
+    @include breakpoint(tablet) {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+    }
   }
 
   &__img {
     width: 540px;
     height: 588px;
     border-radius: 8px;
+    @include breakpoint(desktop) {
+      width: 100%;
+      height: auto;
+    }
+    @include breakpoint(tablet) {
+      width: 100%;
+      height: auto;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__title {
@@ -31,7 +88,21 @@
     line-height: 44px;
     letter-spacing: 1.43px;
     text-transform: uppercase;
-
+    @include breakpoint(desktop) {
+      margin-top: 40px;
+      width: 570px;
+    }
+    @include breakpoint(tablet) {
+      margin-top: 40px;
+      width: 80%;
+    }
+    @include breakpoint(mobile) {
+      margin-top: 10px;
+      width: 80%;
+      font-size: 28px;
+      letter-spacing: 1px;
+      line-height: auto;
+    }
     &--orange {
       color: $c-pri-orange;
       display: inline;
@@ -39,11 +110,16 @@
   }
 
   &__text {
+    text-transform: none;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     color: $c-pri-black;
     opacity: 0.5;
     line-height: 25px;
     padding-top: 30px;
+
+    @include breakpoint(desktop) {
+      padding: 30px 50px 0 50px;
+    }
   }
 }

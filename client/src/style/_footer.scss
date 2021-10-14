@@ -6,12 +6,24 @@
 
   &__content {
     width: 1440px;
-    height: 365px;
-    padding: 0 165px;
+    height: 100%;
+    padding: 0 165px 40px 165px;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 10;
+    @include breakpoint(desktop) {
+      padding: 0 40px 40px 40px;
+      width: 100%;
+    }
+    @include breakpoint(tablet) {
+      padding: 0 40px 40px 40px;
+      width: 100%;
+    }
+    @include breakpoint(mobile) {
+      padding: 0 40px 40px 40px;
+      width: 100%;
+    }
   }
   &__text {
     color: $c-pri-white;
@@ -22,6 +34,19 @@
     width: 50%;
     align-self: flex-start;
     padding-top: 35px;
+    @include breakpoint(desktop) {
+      width: 100%;
+    }
+    @include breakpoint(tablet) {
+      text-align: center;
+      align-self: center;
+      width: 100%;
+    }
+    @include breakpoint(mobile) {
+      text-align: center;
+      align-self: center;
+      width: 100%;
+    }
   }
 
   &__line {
@@ -29,6 +54,32 @@
     height: 75px;
     border-top: 4px solid $c-pri-orange;
     align-self: flex-start;
+    @include breakpoint(tablet) {
+      align-self: center;
+      height: 50px;
+    }
+    @include breakpoint(mobile) {
+      align-self: center;
+    }
+  }
+
+  &__smedia-wrapper {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(tablet) {
+      margin-top: 40px;
+      justify-content: center;
+      flex-direction: column;
+      gap: 40px;
+    }
+    @include breakpoint(mobile) {
+      margin-top: 40px;
+      justify-content: center;
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 
   &__rights {
@@ -36,14 +87,97 @@
     opacity: 0.5;
     font-size: 15px;
     line-height: 25px;
-    align-self: flex-start;
-    padding-top: 63px;
+    align-self: flex-end;
+    @include breakpoint(desktop) {
+      align-self: center;
+    }
+    @include breakpoint(tablet) {
+      align-self: center;
+    }
+    @include breakpoint(mobile) {
+      align-self: center;
+    }
   }
 
   .smedia {
-    align-self: flex-end;
+    justify-self: flex-end;
     display: flex;
     justify-content: space-between;
     width: 110px;
+    @include breakpoint(desktop) {
+      align-self: flex-end;
+    }
+    @include breakpoint(tablet) {
+      align-self: center;
+    }
+    @include breakpoint(mobile) {
+      align-self: center;
+    }
+  }
+}
+
+.nav {
+  &__bar {
+    &--footer {
+      width: 1440px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 165px;
+      position: relative;
+      @include breakpoint(desktop) {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        gap: 40px;
+      }
+      @include breakpoint(tablet) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 40px;
+      }
+      @include breakpoint(mobile) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 40px;
+      }
+    }
+  }
+  &__menu {
+    &--footer {
+      width: 430px;
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      padding: 0;
+
+      @include breakpoint(tablet) {
+        flex-direction: column;
+        gap: 24px;
+        width: min-content;
+      }
+      @include breakpoint(mobile) {
+        flex-direction: column;
+        gap: 24px;
+        width: min-content;
+      }
+    }
+  }
+  &__item {
+    &--footer {
+      @include breakpoint(tablet) {
+        text-align: center;
+        width: 100%;
+      }
+      @include breakpoint(mobile) {
+        text-align: center;
+        width: 100%;
+      }
+    }
   }
 }

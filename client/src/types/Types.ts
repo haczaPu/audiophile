@@ -47,6 +47,10 @@ export type Others = {
   };
 };
 
+export type HomeMainProps = {
+  device: string;
+};
+
 export type CartProps = {
   setCartIsOpen: any;
   forwardedRef: any;
