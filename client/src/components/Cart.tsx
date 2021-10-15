@@ -11,7 +11,6 @@ const Cart = ({ setCartIsOpen, forwardedRef, cartItems, setCartItems, removeAllH
     const existItem: ItemInCart = cartItems.find((x: ItemInCart) => x.slug === productToRemove.slug)!;
     if (existItem.qty === 1) {
       setCartItems(cartItems.filter((x: ItemInCart) => x.slug !== productToRemove.slug));
-      //console.log("decrement item");
     } else {
       setCartItems(
         cartItems.map((x: ItemInCart) =>

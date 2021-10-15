@@ -217,9 +217,8 @@
 }
 
 .footer__content {
-  width: 1440px;
-  height: 100%;
-  padding: 0 165px 40px 165px;
+  width: 1110px;
+  padding: 0 0px 40px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -424,7 +423,7 @@
 }
 
 .nav__bar--footer {
-  width: 1440px;
+  width: 1110px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -434,7 +433,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 165px;
   position: relative;
 }
 
@@ -560,7 +558,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 1110px;
-  border-top: rgba(255, 255, 255, 0.2) solid 1px;
 }
 
 .headphones-main {
@@ -602,7 +599,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 1110px;
-  border-top: rgba(255, 255, 255, 0.2) solid 1px;
 }
 
 .speakers-header__title {
@@ -651,7 +647,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 1110px;
-  border-top: rgba(255, 255, 255, 0.2) solid 1px;
 }
 
 .earphones-header__title {
@@ -1351,7 +1346,7 @@
 
 .nav {
   width: 100%;
-  height: 100px;
+  height: 96px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1410,6 +1405,22 @@
   padding: 0;
 }
 
+.nav__menu--hamb {
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(100% - 80px);
+  background-color: white;
+  top: 120px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  padding: 80px;
+}
+
 .nav__item {
   text-transform: uppercase;
   font-size: 13px;
@@ -1418,6 +1429,11 @@
   cursor: pointer;
   color: white;
   text-decoration: none;
+}
+
+.nav__item--hamb {
+  color: black;
+  font-size: 16px;
 }
 
 .nav__item:hover {
@@ -1431,6 +1447,21 @@
 
 .nav__cart:hover {
   color: #d97e4a;
+}
+
+.hamb-wrapper {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 80px;
+  text-align: center;
 }
 
 .item {
@@ -2375,5 +2406,6 @@
 .logo {
   width: 143px;
   height: 25px;
+  margin-top: 5px;
 }
 /*# sourceMappingURL=main.css.map */

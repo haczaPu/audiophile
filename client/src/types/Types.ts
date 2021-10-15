@@ -52,7 +52,7 @@ export type HomeMainProps = {
 };
 
 export type CartProps = {
-  setCartIsOpen: any;
+  setCartIsOpen: Dispatch<SetStateAction<boolean>>;
   forwardedRef: any;
   cartItems: Array<ItemInCart>;
   setCartItems: any;
@@ -61,13 +61,26 @@ export type CartProps = {
 
 export type NavProps = {
   cartIsOpen: boolean;
-  setCartIsOpen: any;
+  setCartIsOpen: Dispatch<SetStateAction<boolean>>;
   innerRef: any;
   handleClickOutside: any;
   handleClickInside: any;
+  handleClickOutsideHam: any;
+  handleClickInsideHam: any;
   cartItems: Array<ItemInCart>;
   setCartItems: any;
   removeAllHandler: any;
+  width: number;
+  setHamIsOpen: Dispatch<SetStateAction<boolean>>;
+  hamIsOpen: boolean;
+  innerHamRef: any;
+};
+
+export type MobileMenuProps = {
+  setHamIsOpen: Dispatch<SetStateAction<boolean>>;
+  hamIsOpen: boolean;
+  forwardedHamRef: any;
+  insideHamClick: any;
 };
 
 export type CheckoutProps = {

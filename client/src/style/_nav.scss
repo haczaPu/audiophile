@@ -2,7 +2,7 @@
 
 .nav {
   width: 100%;
-  height: 100px;
+  height: 96px;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -35,6 +35,17 @@
     list-style: none;
     justify-content: space-between;
     padding: 0;
+
+    &--hamb {
+      position: absolute;
+      flex-direction: column;
+      width: calc(100% - 80px);
+      background-color: white;
+      top: 120px;
+      align-items: center;
+      border-radius: 8px;
+      padding: 80px;
+    }
   }
 
   &__item {
@@ -45,6 +56,11 @@
     cursor: pointer;
     color: $c-pri-white;
     text-decoration: none;
+
+    &--hamb {
+      color: black;
+      font-size: 16px;
+    }
 
     &:hover {
       color: $c-pri-orange;
@@ -59,4 +75,11 @@
       color: $c-pri-orange;
     }
   }
+}
+.hamb-wrapper {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  text-align: center;
 }
