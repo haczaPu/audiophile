@@ -53,12 +53,12 @@ const Cart = ({ setCartIsOpen, forwardedRef, cartItems, setCartItems, removeAllH
                     </div>
                   </div>
                   <div className="quantity">
-                    <button className="quantity__btn" onClick={() => incrementItemInCart(item)}>
-                      +
-                    </button>
-                    <div className="quantity__value typo--h6">{item.qty}</div>
                     <button className="quantity__btn" onClick={() => decrementItemInCart(item)}>
                       -
+                    </button>
+                    <div className="quantity__value typo--h6">{item.qty}</div>
+                    <button className="quantity__btn" onClick={() => incrementItemInCart(item)}>
+                      +
                     </button>
                   </div>
                 </div>

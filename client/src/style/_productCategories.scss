@@ -8,15 +8,18 @@
   align-items: flex-end;
   margin: 160px 0;
   @include breakpoint(desktop) {
-    margin: 95px 0;
+    width: calc(100% - 80px);
+    margin: 95px 40px;
     height: min-content;
   }
   @include breakpoint(tablet) {
-    margin: 95px 0;
+    width: calc(100% - 80px);
+    margin: 95px 40px;
     height: min-content;
   }
   @include breakpoint(mobile) {
-    margin: 95px 0;
+    width: calc(100% - 40px);
+    margin: 95px 20px;
     height: min-content;
   }
 

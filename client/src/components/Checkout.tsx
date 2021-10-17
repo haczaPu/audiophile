@@ -28,6 +28,7 @@ const Checkout = ({
   const onSubmit = handleSubmit(data => {
     const finalData = { ...data, order: cartItems };
     alert(JSON.stringify(finalData));
+    setOrderModalIsOpen(true);
   });
 
   //Change payment handler
@@ -39,9 +40,10 @@ const Checkout = ({
   const goBackHandle = () => {
     history.goBack();
   };
+
   return (
     <>
-      {!orderModalIsOpen && (
+      {orderModalIsOpen && (
         <OrderModal grandtotal={grandtotal} setOrderModalIsOpen={setOrderModalIsOpen} cartItems={cartItems} />
       )}
       <div className="checkout">

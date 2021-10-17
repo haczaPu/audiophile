@@ -33,8 +33,8 @@
       margin: 0 40px;
     }
     @include breakpoint(mobile) {
-      width: calc(100% - 80px);
-      margin: 0 40px;
+      width: calc(100% - 40px);
+      margin: 0 20px;
     }
   }
 }
@@ -42,21 +42,22 @@
 .home-main {
   display: flex;
   justify-content: center;
+  margin: 0 40px;
+  @include breakpoint(mobile) {
+    margin: 0 20px;
+  }
 
   &__content {
     width: 1110px;
 
     @include breakpoint(desktop) {
       width: 100%;
-      margin: 0 40px;
     }
     @include breakpoint(tablet) {
-      width: calc(100% - 80px);
-      margin: 0 40px;
+      width: 100%;
     }
     @include breakpoint(mobile) {
-      width: calc(100% - 80px);
-      margin: 0 40px;
+      width: 100%;
     }
 
     .speaker-zx9 {

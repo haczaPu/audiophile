@@ -17,6 +17,11 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: bold;
+    @include breakpoint(mobile) {
+      font-size: 28px;
+      letter-spacing: 1px;
+      line-height: auto;
+    }
   }
   &--h3 {
     font-size: 32px;

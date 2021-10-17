@@ -20,9 +20,9 @@ const HomeMain = () => {
           </div>
         </div>
       </div>
+      <ProductCategories />
       <div className="home-main">
         <div className="home-main__content">
-          <ProductCategories />
           <section className="speaker-zx9">
             <div className="speaker-zx9__img-container">
               <img
