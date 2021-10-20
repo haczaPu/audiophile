@@ -9,20 +9,20 @@ const Footer = () => {
       <div className="footer__content">
         <div className="footer__line"></div>
 
-        <div className="nav__bar">
+        <div className="nav__bar--footer">
           <img className="logo" src="/assets/shared/desktop/logo.svg" alt="logo" />
-          <ul className="nav__menu">
+          <ul className="nav__menu--footer">
             <Link to="/" style={{ textDecoration: "none" }}>
-              <li className="nav__item">Home</li>
+              <li className="nav__item nav__item--footer">Home</li>
             </Link>
             <Link style={{ textDecoration: "none" }} to="/headphones">
-              <li className="nav__item">Headphones</li>
+              <li className="nav__item nav__item--footer">Headphones</li>
             </Link>
             <Link style={{ textDecoration: "none" }} to="/speakers">
-              <li className="nav__item">Speakers</li>
+              <li className="nav__item nav__item--footer">Speakers</li>
             </Link>
             <Link style={{ textDecoration: "none" }} to="/earphones">
-              <li className="nav__item">Earphones</li>
+              <li className="nav__item nav__item--footer">Earphones</li>
             </Link>
           </ul>
         </div>
@@ -31,14 +31,16 @@ const Footer = () => {
           specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo
           facility - we’re open 7 days a week.
         </p>
-        <div className="smedia">
-          <IconContext.Provider value={{ className: "nav__cart", size: "25px" }}>
-            <FaFacebookSquare />
-            <FaTwitter />
-            <FaInstagram />
-          </IconContext.Provider>
+        <div className="footer__smedia-wrapper">
+          <p className="footer__rights">Copyright 2021. All Rights Reserved</p>
+          <div className="smedia">
+            <IconContext.Provider value={{ className: "nav__cart", size: "25px" }}>
+              <FaFacebookSquare />
+              <FaTwitter />
+              <FaInstagram />
+            </IconContext.Provider>
+          </div>
         </div>
-        <p className="footer__rights">Copyright 2021. All Rights Reserved</p>
       </div>
     </div>
   );

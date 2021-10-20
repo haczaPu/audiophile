@@ -11,7 +11,6 @@ const Cart = ({ setCartIsOpen, forwardedRef, cartItems, setCartItems, removeAllH
     const existItem: ItemInCart = cartItems.find((x: ItemInCart) => x.slug === productToRemove.slug)!;
     if (existItem.qty === 1) {
       setCartItems(cartItems.filter((x: ItemInCart) => x.slug !== productToRemove.slug));
-      //console.log("decrement item");
     } else {
       setCartItems(
         cartItems.map((x: ItemInCart) =>
@@ -54,12 +53,12 @@ const Cart = ({ setCartIsOpen, forwardedRef, cartItems, setCartItems, removeAllH
                     </div>
                   </div>
                   <div className="quantity">
-                    <button className="quantity__btn" onClick={() => incrementItemInCart(item)}>
-                      +
-                    </button>
-                    <div className="quantity__value typo--h6">{item.qty}</div>
                     <button className="quantity__btn" onClick={() => decrementItemInCart(item)}>
                       -
+                    </button>
+                    <div className="quantity__value typo--h6">{item.qty}</div>
+                    <button className="quantity__btn" onClick={() => incrementItemInCart(item)}>
+                      +
                     </button>
                   </div>
                 </div>

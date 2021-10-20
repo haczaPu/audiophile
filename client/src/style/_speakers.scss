@@ -12,7 +12,9 @@
     justify-content: center;
     align-items: center;
     width: 1110px;
-    border-top: hsla(0, 0%, 100%, 0.2) solid 1px;
+  }
+  @include breakpoint(mobile) {
+    height: 192px;
   }
 
   &__title {
@@ -28,4 +30,9 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-bottom: 140px;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 80px;
+  }
 }

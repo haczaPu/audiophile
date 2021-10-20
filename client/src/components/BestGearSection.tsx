@@ -15,7 +15,12 @@ const BestGearSection = () => {
             people who make Audiophile the best place to buy your portable audio equipment.
           </p>
         </div>
-        <img className="best-gear__img" src="/assets/shared/desktop/image-best-gear.jpg" alt="best-gear" />
+        <img
+          className="best-gear__img"
+          srcSet="/assets/shared/mobile/image-best-gear.jpg 768w, /assets/shared/tablet/image-best-gear.jpg 1190w, /assets/shared/desktop/image-best-gear.jpg 1600w"
+          src="/assets/shared/desktop/image-best-gear.jpg"
+          alt="best-gear"
+        />
       </div>
     </section>
   );

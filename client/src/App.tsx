@@ -17,11 +17,14 @@ import Checkout from "./components/Checkout";
 import Product from "./components/Product";
 
 function App() {
+  const [hamIsOpen, setHamIsOpen] = useState<boolean>(false);
+  const [width, setWidth] = useState<number>(window.innerWidth);
   const [productsData, setProductsData] = useState<Array<SingleProduct>>([]);
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
   const [orderModalIsOpen, setOrderModalIsOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useLocalStorage<Array<ItemInCart>>("cart items", []);
   const ref = useRef(null);
+  const refHam = useRef(null);
   const [emoneyPayment, setEmoneyPayment] = useState<boolean>(true);
 
   //Fetching products data
@@ -50,6 +53,15 @@ function App() {
     setCartIsOpen(true);
   };
 
+  //Hamburger menu modal handlers
+  const handleClickOutsideHam = () => {
+    setHamIsOpen(false);
+  };
+
+  const handleClickInsideHam = () => {
+    setHamIsOpen(true);
+  };
+
   //Remove all items from cart
   const removeAllHandler = () => {
     setCartItems([]);
@@ -58,23 +70,39 @@ function App() {
   //React hook listening for clicks outside of a cart modal
   useOnClickOutside(ref, handleClickOutside);
 
+  //React hook listening for clicks outside of a hamburger menu modal
+  useOnClickOutside(refHam, handleClickOutsideHam);
+
+  //Window size listener
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  });
+
   return (
     <Router>
       <div className="App">
         <ScrollToTop />
         <Nav
+          width={width}
           cartIsOpen={cartIsOpen}
           cartItems={cartItems}
           setCartItems={setCartItems}
           setCartIsOpen={setCartIsOpen}
           handleClickOutside={handleClickOutside}
-          innerRef={ref}
           handleClickInside={handleClickInside}
+          handleClickOutsideHam={handleClickOutsideHam}
+          handleClickInsideHam={handleClickInsideHam}
+          innerRef={ref}
+          innerHamRef={refHam}
           removeAllHandler={removeAllHandler}
+          hamIsOpen={hamIsOpen}
+          setHamIsOpen={setHamIsOpen}
         />
-        {cartIsOpen ? <div className="cart__bg"></div> : null}
+        {cartIsOpen || (hamIsOpen && width < 769) ? <div className="cart__bg"></div> : null}
         <Switch>
-          <Route path="/" exact component={HomeMain} />
+          <Route path="/" exact>
+            <HomeMain />
+          </Route>
           <Route path="/headphones" component={Headphones} />
           <Route path="/speakers" component={Speakers} />
           <Route path="/earphones" component={Earphones} />

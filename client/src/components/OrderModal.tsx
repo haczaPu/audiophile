@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const OrderModal = ({ cartItems, setOrderModalIsOpen, grandtotal }: OrderModalProps) => {
   const [viewMore, setViewMore] = useState(false);
   let showItems = cartItems;
-  //Show more/les items
+
+  //Show more/less items
   if (!viewMore) {
     showItems = cartItems.slice(0, 1);
   }
@@ -22,8 +23,8 @@ const OrderModal = ({ cartItems, setOrderModalIsOpen, grandtotal }: OrderModalPr
         </div>
         <div className="order-modal__order">
           <div className="order-modal__items">
-            {showItems.map((item: any) => (
-              <div className="order-modal__item">
+            {showItems.map((item: any, i: number) => (
+              <div className="order-modal__item" key={i}>
                 <img className="order-item__img" src={`./assets/cart/image-${item.slug}.jpg`} alt="" />
                 <div className="order-item__name-wrapper">
                   <div className="order-item__name typo--common ">
@@ -36,9 +37,11 @@ const OrderModal = ({ cartItems, setOrderModalIsOpen, grandtotal }: OrderModalPr
                 <div className="order-item__qty typo--common">x{item.qty}</div>
               </div>
             ))}
-            <div className="order-item__more-less typo--common" onClick={() => setViewMore(!viewMore)}>
-              View{viewMore ? " less" : " more"}
-            </div>
+            {cartItems.length <= 1 ? null : (
+              <div className="order-item__more-less typo--common" onClick={() => setViewMore(!viewMore)}>
+                {viewMore ? "View less" : `and ${cartItems.length - 1} other item(s)`} {}
+              </div>
+            )}
           </div>
           <div className="order-modal__price typo--common">
             <div className="order-modal__total-title typo--common">GRAND TOTAL</div>

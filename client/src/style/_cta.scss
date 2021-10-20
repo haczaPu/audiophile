@@ -6,6 +6,7 @@
   background-color: transparent;
   cursor: pointer;
   text-align: left;
+  font-size: 15px;
   &:hover {
     color: $c-pri-orange;
   }
@@ -23,6 +24,7 @@
   outline: none;
   border: none;
   cursor: pointer;
+
   &:hover {
     background-color: $c-sec-orange;
   }
@@ -61,6 +63,14 @@
 
     &:hover {
       color: $c-pri-orange;
+    }
+  }
+
+  &--add {
+    transition: 150ms;
+    &:active {
+      transform: scale(0.9);
+      background-color: $c-pri-orange;
     }
   }
 }

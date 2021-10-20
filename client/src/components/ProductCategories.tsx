@@ -27,8 +27,8 @@ const ProductCategories = () => {
           <div className="product-category">
             <img
               className="product-category__img"
-              src="/assets/shared/desktop/image-category-thumbnail-Speakers.png"
-              alt="category-thumbnail-headphones"
+              src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
+              alt="category-thumbnail-speakers"
             />
             <h4 className="product-category__title">Speakers</h4>
             <button className="product-category__btn">
@@ -46,7 +46,7 @@ const ProductCategories = () => {
             <img
               className="product-category__img"
               src="/assets/shared/desktop/image-category-thumbnail-Earphones.png"
-              alt="category-thumbnail-headphones"
+              alt="category-thumbnail-earphones"
             />
             <h4 className="product-category__title">Earphones</h4>
             <button className="product-category__btn">
