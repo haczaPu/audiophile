@@ -34,7 +34,10 @@ const Nav = ({
           <DesktopMenu />
         )}
         <IconContext.Provider value={{ className: "nav__cart", size: "25px" }}>
-          <HiOutlineShoppingCart onClick={handleClickInside} />
+          <div className="cart-icon">
+            <HiOutlineShoppingCart onClick={handleClickInside} />
+            {cartItems.length === 0 ? null : <div className="cart-icon__circle typo--sub">{cartItems.length}</div>}
+          </div>
           {cartIsOpen ? (
             <Cart
               removeAllHandler={removeAllHandler}

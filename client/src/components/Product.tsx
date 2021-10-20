@@ -90,7 +90,7 @@ const Product = ({ productsData, cartItems, setCartItems }: ProductsData) => {
                   </button>
                 </div>
 
-                <button className="cta" onClick={() => onAdd(product, quantityValue)}>
+                <button className="cta cta--add" onClick={() => onAdd(product, quantityValue)}>
                   Add to cart
                 </button>
               </div>

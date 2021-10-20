@@ -65,4 +65,12 @@
       color: $c-pri-orange;
     }
   }
+
+  &--add {
+    transition: 150ms;
+    &:active {
+      transform: scale(0.9);
+      background-color: $c-pri-orange;
+    }
+  }
 }
