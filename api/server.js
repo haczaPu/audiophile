@@ -6,6 +6,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const Product = require("./models/productModel");
 
+//CORS
 const corsOptions = {
   origin: "*",
   credentials: true, //access-control-allow-credentials:true
@@ -13,17 +14,20 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
+//Connect to database
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
-
 const db = mongoose.connection;
 db.on("error", error => console.error(error));
 db.once("open", () => console.log("Connected to database"));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+//Post
+app.use("/", require("./routes/orderRoute"));
 
-app.get("/api", (req, res) => {
+//Get
+app.get("/products", (req, res) => {
   Product.find((err, products) => {
     if (err) {
       console.log(err);
@@ -33,6 +37,7 @@ app.get("/api", (req, res) => {
   });
 });
 
+//Listen
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
 });

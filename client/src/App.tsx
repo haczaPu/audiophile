@@ -29,7 +29,7 @@ function App() {
 
   //Fetching products data
   useEffect(() => {
-    fetch("http://localhost:3001/api", {
+    fetch("http://localhost:3001/products", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -114,6 +114,7 @@ function App() {
               emoneyPayment={emoneyPayment}
               setEmoneyPayment={setEmoneyPayment}
               cartItems={cartItems}
+              setCartItems={setCartItems}
               orderModalIsOpen={orderModalIsOpen}
               setOrderModalIsOpen={setOrderModalIsOpen}
             />

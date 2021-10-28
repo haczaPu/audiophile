@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { OrderModalProps } from "../types/Types";
 import { Link } from "react-router-dom";
 
-const OrderModal = ({ cartItems, setOrderModalIsOpen, grandtotal }: OrderModalProps) => {
+const OrderModal = ({ cartItems, setCartItems, setOrderModalIsOpen, grandtotal }: OrderModalProps) => {
   const [viewMore, setViewMore] = useState(false);
   let showItems = cartItems;
 
@@ -10,6 +10,12 @@ const OrderModal = ({ cartItems, setOrderModalIsOpen, grandtotal }: OrderModalPr
   if (!viewMore) {
     showItems = cartItems.slice(0, 1);
   }
+
+  //Go back to home button
+  const handleGoToHome = () => {
+    setOrderModalIsOpen(false);
+    setCartItems([]);
+  };
 
   return (
     <>
@@ -51,7 +57,7 @@ const OrderModal = ({ cartItems, setOrderModalIsOpen, grandtotal }: OrderModalPr
           </div>
         </div>
 
-        <Link style={{ textDecoration: "none" }} to="/" onClick={() => setOrderModalIsOpen(false)}>
+        <Link style={{ textDecoration: "none" }} to="/" onClick={() => handleGoToHome()}>
           <button className="cta cta--wide">BACK TO HOME</button>
         </Link>
       </div>

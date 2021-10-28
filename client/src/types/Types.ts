@@ -87,6 +87,7 @@ export type CheckoutProps = {
   emoneyPayment: boolean;
   setEmoneyPayment: Dispatch<SetStateAction<boolean>>;
   cartItems: Array<ItemInCart>;
+  setCartItems: any;
   orderModalIsOpen: boolean;
   setOrderModalIsOpen: Dispatch<SetStateAction<boolean>>;
 };
@@ -107,6 +108,7 @@ export type Order = {
 
 export type OrderModalProps = {
   cartItems: Array<ItemInCart>;
+  setCartItems: any;
   setOrderModalIsOpen: Dispatch<SetStateAction<boolean>>;
   grandtotal: number;
 };

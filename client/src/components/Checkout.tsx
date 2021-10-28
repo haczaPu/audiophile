@@ -3,11 +3,13 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { CheckoutProps, Order, ItemInCart } from "../types/Types";
 import OrderModal from "./OrderModal";
+import axios from "axios";
 
 const Checkout = ({
   emoneyPayment,
   setEmoneyPayment,
   cartItems,
+  setCartItems,
   orderModalIsOpen,
   setOrderModalIsOpen,
 }: CheckoutProps) => {
@@ -27,8 +29,22 @@ const Checkout = ({
   //Submit form
   const onSubmit = handleSubmit(data => {
     const finalData = { ...data, order: cartItems };
-    alert(JSON.stringify(finalData));
     setOrderModalIsOpen(true);
+
+    const toSend = {
+      name: finalData.name,
+      email: finalData.email,
+      phonenumber: finalData.phonenumber,
+      addreess: finalData.address,
+      zipcode: finalData.zipcode,
+      city: finalData.city,
+      country: finalData.country,
+      paymentmethod: finalData.paymentmethod,
+      emoneynumber: finalData.emoneynumber,
+      emoneypin: finalData.emoneypin,
+    };
+
+    axios.post("http://localhost:3001/orders", toSend);
   });
 
   //Change payment handler
@@ -44,7 +60,12 @@ const Checkout = ({
   return (
     <>
       {orderModalIsOpen && (
-        <OrderModal grandtotal={grandtotal} setOrderModalIsOpen={setOrderModalIsOpen} cartItems={cartItems} />
+        <OrderModal
+          grandtotal={grandtotal}
+          setOrderModalIsOpen={setOrderModalIsOpen}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+        />
       )}
       <div className="checkout">
         <div className="checkout__header"></div>

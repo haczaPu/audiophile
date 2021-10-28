@@ -11,7 +11,7 @@
   top: 220px;
   left: calc(50vw - 270px);
   padding: 48px;
-  z-index: 2;
+  z-index: 5;
 
   @include breakpoint(tablet) {
     width: calc(100% - 80px);
@@ -126,7 +126,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 4;
   }
 
   &__icon {

@@ -108,6 +108,9 @@
   gap: 20px;
   width: 1110px;
   margin-top: 150px;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 0;
 
   @include breakpoint(desktop) {
     width: calc(100% - 80px);
@@ -127,7 +130,6 @@
     margin-top: 90px;
     gap: 20px;
     flex-direction: column;
-
     justify-content: space-between;
   }
 
@@ -141,10 +143,22 @@
   &__image {
     border-radius: 8px;
     width: 100%;
+    min-width: 454px;
     object-fit: cover;
     height: 100%;
 
+    @include breakpoint(desktop) {
+      min-width: 0;
+    }
+    @include breakpoint(tablet) {
+      min-width: 0;
+    }
+    @include breakpoint(mobile) {
+      min-width: 0;
+    }
+
     // &--2 {
+    //   width: 100%;
     // }
 
     &--3 {
